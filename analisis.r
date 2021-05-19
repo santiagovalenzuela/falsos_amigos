@@ -27,6 +27,9 @@ datos_pre18 <- voto_pre_18 %>%
 datos_pre18$gob_PRI <- "Otro"
 datos_pre18$gob_PRI[datos_pre18$PARTIDO_GOBERNADOR == "PRI"] <- "PRI"
 
+datos_pre18$gob_PRI <- as_factor(datos_pre18$gob_PRI)
+datos_pre18$gob_PRI <- fct_relevel(datos_pre18$gob_PRI, c("PRI","Otro"))
+
 # Creamos dos grupos, separando estados entre los que son gobernados por el PRI
 # y los demás
 friends <- datos_pre18$pc_AMLO[datos_pre18$gob_PRI == "PRI"]
@@ -34,6 +37,8 @@ foes <- datos_pre18$pc_AMLO[datos_pre18$gob_PRI == "Otro"]
 
 #Hacemos una prueba de comparación de medias
 amlo <- t.test(friends, foes, alternative= "greater")
+
+p_amlo <- round(amlo$p.value, 3)
 
 #Vemos el tamaño del efecto
 
@@ -47,6 +52,7 @@ meade_friends <- datos_pre18$pc_MEADE[datos_pre18$gob_PRI == "PRI"]
 meade_foes <-datos_pre18$pc_MEADE[datos_pre18$gob_PRI == "Otro"]
 
 meade <- t.test(meade_friends, meade_foes, alternative= "greater")
+p_meade <- round(meade$p.value, 3)
 
 #Calculamos el tamaño del efecto para Meade
 
@@ -58,6 +64,7 @@ r_meade <- sqrt( (t_meade**2) / ( (t_meade**2) + df_meade))
 font_add_google("Lato", "lato")
 showtext_auto()
 
+
 # Gráfica 1: voto AMLO
 
 ggplot(datos_pre18, aes(gob_PRI, pc_AMLO)) +
@@ -65,9 +72,9 @@ ggplot(datos_pre18, aes(gob_PRI, pc_AMLO)) +
   stat_summary(fun.y="mean", color="#347B98", shape=15) + #Agregamos la media 
   geom_jitter(alpha = 0.1, fill = "#433498") +
   
-  labs(title= "No hubo diferencia en el porcentaje de voto a AMLO en los estados priistas",
-       subtitle = "Porcentaje del voto a AMLO en los estados gobernados por el PRI y por otros partidos en 2018",
-       caption = " Fuente: Elaboración propia con datos del INE \n @santivalenz",
+  labs(title= "No hubo diferencia en el porcentaje de voto a AMLO entre los estados \ngobernados por el PRI y los demás",
+       subtitle = "Porcentaje del voto a AMLO en los estados gobernados por el PRI y por otros partidos en 2018.\nCada punto representa un estado. El cuadrado azul representa la media del grupo.",
+       caption = paste0("p =", p_amlo, "\nFuente: Elaboración propia con datos del INE"),
        x = "Partido del gobernador(a)",
        y = "Porcentaje de voto a AMLO") +
   
@@ -86,8 +93,8 @@ ggplot(datos_pre18, aes(gob_PRI, pc_MEADE)) +
   geom_jitter(alpha = 0.1, fill = "#433498") +
   
   labs(title= "...pero sí hubo diferencias en el voto a Meade",
-       subtitle = "Porcentaje del voto a Meade en los estados gobernados por el PRI y por otros partidos en 2018",
-       caption = " Fuente: Elaboración propia con datos del INE \n @santivalenz",
+       subtitle = "Porcentaje del voto a Meade en los estados gobernados por el PRI y por otros partidos en 2018.\nCada punto representa un estado. El cuadrado azul representa la media del grupo.",
+       caption = paste0("p =", p_meade, "\nFuente: Elaboración propia con datos del INE"),
        x = "Partido del gobernador(a)",
        y = "Porcentaje de voto a Meade") +
   
