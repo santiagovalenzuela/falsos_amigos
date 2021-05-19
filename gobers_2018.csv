@@ -1,0 +1,33 @@
+ID_ESTADO,NOMBRE_ESTADO,ABREVIATURA,GOBERNADOR,PARTIDO_GOBERNADOR
+1,AGUASCALIENTES,AGS,Martín Orozco Sandoval,PAN
+2,BAJA CALIFORNIA,BC,Francisco Vega de Lamadrid,PAN
+3,BAJA CALIFORNIA SUR,BCS,Carlos Mendoza Davis,PAN
+4,CAMPECHE,CAMP,Alejandro Moreno Cárdenas,PRI
+5,COAHUILA,COAH,Miguel Riquelme Solís,PRI
+6,COLIMA,COL,José Ignacio Peralta,PRI
+7,CHIAPAS,CHIS,Manuel Velasco Coello,PVEM
+8,CHIHUAHUA,CHIH,Javier Corral Jurado,PAN
+9,CIUDAD DE MEXICO,CDMX,José Ramón Amieva,PRD
+10,DURANGO,DGO,José Rosas Aispuro,PAN
+11,GUANAJUATO,GTO,Miguel Márquez Márquez,PAN
+12,GUERRERO,GRO,Héctor Antonio Astudillo Flores,PRI
+13,HIDALGO,HGO,Omar Fayad Meneses,PRI
+14,JALISCO,JAL,Aristóteles Sandoval,PRI
+15,MEXICO,MEX,Alfredo del Mazo Maza,PRI
+16,MICHOACAN,MICH,Silvano Aureoles Conejo,PRD
+17,MORELOS,MOR,Graco Luis Ramírez Abreu,PRD
+18,NAYARIT,NAY,Antonio Echevarría García,PAN
+19,NUEVO LEON,NL,Manuel Florentino González Flores,Independiente
+20,OAXACA,OAX,Alejandro Murat,PRI
+21,PUEBLA,PUE,José Antonio Gali Fayad,PAN
+22,QUERETARO,QRO,Francisco Domínguez Servién,PAN
+23,QUINTANA ROO,QROO,Carlos Manuel Joaquín González,PRD
+24,SAN LUIS POTOSI,SLP,Juan Manuel Carreras,PRI
+25,SINALOA,SIN,Quirino Ordaz Coppel,PRI
+26,SONORA,SON,Claudia Artemiza Pavlovich Arellano,PRI
+27,TABASCO,TAB,Arturo Núñez Jiménez,PRD
+28,TAMAULIPAS,TAMPS,Francisco García Cabeza de Vaca,PAN
+29,TLAXCALA,TLAX,Marco Antonio Mena Rodríguez,PRI
+30,VERACRUZ,VER,Miguel Ángel Yunes Linares,PAN
+31,YUCATAN,YUC,Rolando Rodrigo Zapata Bello,PRI
+32,ZACATECAS,ZAC,Alejandro Tello Cristerna,PRI
